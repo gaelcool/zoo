@@ -1,0 +1,227 @@
+
+
+
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px 0 rgba(121, 194, 208, 0.4);
+  overflow: hidden;
+  width: 800px;
+  max-width: 95vw;
+  height: 520px;
+  margin: auto;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.register-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background: rgba(168, 213, 226, 0.1);
+}
+
+.register-form {
+  width: 100%;
+  max-width: 310px;
+}
+
+h2 {
+  font-size: 1.8em;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.notification {
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  display: none;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  animation: slideIn 0.4s ease;
+}
+
+.notification.show {
+  display: flex;
+}
+
+.notification.success {
+  background: rgba(168, 230, 207, 0.9);
+  color: #1f7a4f;
+  border: 2px solid #7dd3a0;
+}
+
+.notification.error {
+  background: rgba(255, 200, 200, 0.9);
+  color: #b83232;
+  border: 2px solid #ff8080;
+}
+
+.notification .icon {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.input-box {
+  position: relative;
+  width: 100%;
+  margin: 20px 0;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.8);
+}
+
+.input-box input {
+  width: 100%;
+  height: 45px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 0.85em;
+  color: peachpuff;
+  padding: 18px 35px 0 5px;
+}
+
+.input-box label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-size: ;
+  color: rgba(58, 56, 56, 0.9);
+  opacity: 30%;
+  transition: .5s;
+  padding: 2px 9px;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+  top: -12px;
+  font-size: 0.8em;
+  padding: 0 4px;
+  background: rgba(168, 213, 226, 0.3);
+  border-radius: 4px;
+  opacity: 0%;
+}
+
+.main-footer {
+    background: repeating-linear-gradient(
+        90deg,
+        #4a5c3a,
+        #4a5c3a 20px,
+        #3a4c2a 20px,
+        #3a4c2a 40px
+    );
+    text-align: center;
+    padding: 20px;
+    color: peachpuff;
+    font-size: 14px;
+    margin-top: auto;
+}
+
+button {
+  width: 100%;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 1em;
+  color: #2c5f6f;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(168, 213, 226, 0.3);
+  margin-top: 15px;
+}
+
+button:hover {
+  background: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(168, 213, 226, 0.5);
+}
+
+.login-link {
+  font-size: .85em;
+  color: #fff;
+  text-align: center;
+  margin: 20px 0 5px;
+}
+
+.login-link a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+.register-right {
+  flex: 1;
+  background: url(Login1.jpg) no-repeat center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.register-right::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(168, 213, 226, 0.2);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes animateBg {
+  0% {
+    filter: hue-rotate(0deg) brightness(1);
+  }
+  50% {
+    filter: hue-rotate(20deg) brightness(1.1);
+  }
+  100% {
+    filter: hue-rotate(0deg) brightness(1);
+  }
+}
+
+@media (min-width: 900px) {
+  .register-container {
+    flex-direction: column;
+    width: 95vw;
+    height: auto;
+  }
+  
+  .register-left, .register-right {
+    width: 100%;
+    height: 280px;
+    padding: 25px;
+  }
+  
+  .register-right {
+    filter: none !important;
+  }
+}
